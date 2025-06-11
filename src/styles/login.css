@@ -1,0 +1,329 @@
+/* Importación existente */
+@import 'home.css';
+
+/* Estilo principal */
+.login-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+    text-align: center;
+}
+
+.login-title{
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #12175f;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Carrousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    min-width: 100%;
+    height: 100%;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.carousel-control {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background: white;
+}
+
+
+/* Formulario */
+
+.login-form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 93.7%;
+    background-color: #1e2126;
+    font-size: 18px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+}
+
+/* Inputs */
+.login-form input {
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #2d3238;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-form input:focus {
+    border: 1px solid #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Etiquetas */
+.login-form label {
+    display: block;
+    width: 90%;
+    margin: 0 auto 8px auto;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: white;
+}
+
+/* Botón de envío */
+.btn-submit {
+    width: 60%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff; /* Botón azul */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Enlaces de texto */
+.registro {
+    color: white;
+    text-decoration: underline;
+    font-size: 16px;
+    margin-top: 10px;
+    display: block;
+}
+
+.registro:hover {
+    color: #80bdff; /* Efecto hover */
+}
+
+/* Párrafos */
+.login-form p {
+    color: white;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Inicio de sesión social */
+.login-form ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.login-form ul li {
+    margin: 0 10px;
+}
+
+.login-form a.fb,
+.login-form a.google {
+    display: inline-block;
+    font-size: 14px;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Lucida Grande, Helvetica Neue, Helvetica, Arial, sans-serif;
+    position: relative;
+    text-shadow: 0 -1px 0 rgba(0, 0, 20, 0.4);
+}
+
+/* Botón Facebook */
+.login-form a.fb {
+    background: #3a5a97;
+}
+
+.login-form a.fb:hover {
+    background: #2d4373;
+}
+
+/* Botón Google */
+.login-form a.google {
+    background: dodgerblue;
+}
+
+.login-form a.google:hover {
+    background: #1e90ff;
+}
+
+
+
+/* Responsive Design */
+
+/* Breakpoint para 1024px */
+@media (max-width: 1024px) {
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-item img {
+        height: 450px;
+    }
+
+    .login-form {
+        font-size: 25px;
+    }
+
+    .login-form input {
+        width: 80%;
+        padding: 8px;
+    }
+
+    .login-form a.fb,
+    .login-form a.google {
+        padding: 12px 25px 12px 40px;
+        font-size: 14px;
+    }
+}
+
+/* Breakpoint para 768px (Tablets) */
+@media (max-width: 768px) {
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .login-title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
+
+    .login-form {
+        font-size: 20px;
+        padding: 20px;
+    }
+
+    .login-form input {
+        width: 85%;
+    }
+
+    .login-form ul {
+        flex-direction: column;
+    }
+
+    .login-form a.fb,
+    .login-form a.google {
+        width: 85%;
+        font-size: 14px;
+    }
+}
+
+/* Breakpoint para 360px (Smartphones pequeños) */
+@media (max-width: 360px) {
+    .login-container {
+        grid-template-columns: 1fr;
+    }
+
+    .login-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .carousel-item img {
+        height: 200px;
+    }
+
+    .login-form {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .login-form input {
+        width: 95%;
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+
+    .login-form a.fb,
+    .login-form a.google {
+        width: 100%;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .login-form ul {
+        flex-direction: column;
+        width: 100%;
+    }
+}
