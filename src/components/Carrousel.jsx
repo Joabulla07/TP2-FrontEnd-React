@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/login.css';
+import medico from '../assets/medico_y_paciente.jpg';
+import urgencias from '../assets/urgencias.jpg';
+import farmacias from '../assets/farmacias.jpeg';
 
 export default function Carrousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
-        'https://github.com/Joabulla07/Proyecto2020-Python/blob/12062d535e498a08aec8274f50885ed86cca46de/medico_y_paciente.jpg',
-        'https://github.com/Joabulla07/Proyecto2020-Python/blob/12062d535e498a08aec8274f50885ed86cca46de/urgencias.jpg',
-        'https://github.com/Joabulla07/Proyecto2020-Python/blob/12062d535e498a08aec8274f50885ed86cca46de/farmacias.jpeg'
+        medico,
+        urgencias,
+        farmacias
     ];
 
     const goToPrevious = () => {
