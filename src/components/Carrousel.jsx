@@ -4,9 +4,9 @@ import '../styles/login.css';
 export default function Carrousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
-        'src/assets/medico_y_paciente.jpg',
-        'src/assets/urgencias.jpg',
-        'src/assets/farmacias.jpeg'
+        'https://github.com/Joabulla07/Proyecto2020-Python/blob/12062d535e498a08aec8274f50885ed86cca46de/medico_y_paciente.jpg',
+        'https://github.com/Joabulla07/Proyecto2020-Python/blob/12062d535e498a08aec8274f50885ed86cca46de/urgencias.jpg',
+        'https://github.com/Joabulla07/Proyecto2020-Python/blob/12062d535e498a08aec8274f50885ed86cca46de/farmacias.jpeg'
     ];
 
     const goToPrevious = () => {
