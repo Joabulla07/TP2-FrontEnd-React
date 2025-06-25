@@ -4,9 +4,9 @@ import '../styles/login.css';
 export default function Carrousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [
-        '/src/assets/medico_y_paciente.jpg',
-        '/src/assets/urgencias.jpg',
-        '/src/assets/farmacias.jpeg'
+        'src/assets/medico_y_paciente.jpg',
+        'src/assets/urgencias.jpg',
+        'src/assets/farmacias.jpeg'
     ];
 
     const goToPrevious = () => {

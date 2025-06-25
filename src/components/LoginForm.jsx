@@ -4,6 +4,9 @@ export default function LoginForm(){
     return (
         <div className="login-form">
             <form>
+                <div>
+                    <h2>Inicio de sesión</h2>
+                </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Usuario</label>
                     <input type="email" id="exampleInputEmail1" placeholder="Ingrese su usuario"/>
