@@ -1,5 +1,6 @@
 import React from "react";
 import turno from "../assets/turno.jpg";
+import {Link} from "react-router-dom";
 
 
 export default function Noticias() {
@@ -25,9 +26,10 @@ export default function Noticias() {
                     <img src={turno} alt="Solicitar turno" className="turno-imagen"/>
                     <h4 style={{ textAlign: "center" }}>¿Cómo solicitar turno?</h4>
                     <p>¡Creá un usuario y ya podés sacar turno!</p>
-                    <button className="registro-btn" onClick={() => window.location.href = "/login"}
-                    >Registrarse
-                    </button>
+                    <Link to="/login" className="registro-btn" style={{ textAlign: "center" }}>
+                        Registrarse
+                    </Link>
+
                 </div>
             </div>
         </>
