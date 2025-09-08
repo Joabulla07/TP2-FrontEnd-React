@@ -81,7 +81,7 @@ export default function ContactoForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <form onSubmit={handleSubmit} className="contacto-form">
       <label htmlFor="name">Nombre:</label>
       <input
         type="text"
@@ -93,24 +93,19 @@ export default function ContactoForm() {
         onChange={(e) => setName(e.target.value)}
       />
 
-      <div className="mb-4">
-        <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-          Email
-        </label>
-        <input
+      <label htmlFor="email">
+        Email
+      </label>
+      <input
           type="email"
           id="email"
           value={email}
           onChange={handleEmailChange}
-          className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-            emailError ? "border-red-500" : "border-gray-300"
-          }`}
           placeholder="tu@email.com"
-        />
-        {emailError && (
-          <p className="mt-1 text-sm text-red-600">{emailError}</p>
-        )}
-      </div>
+      />
+      {emailError && (
+          <p>{emailError}</p>
+      )}
 
       <label htmlFor="telefono">Teléfono:</label>
       <input
