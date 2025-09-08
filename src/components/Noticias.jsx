@@ -26,7 +26,7 @@ export default function Noticias() {
                     <img src={turno} alt="Solicitar turno" className="turno-imagen"/>
                     <h4 style={{ textAlign: "center" }}>¿Cómo solicitar turno?</h4>
                     <p>¡Creá un usuario y ya podés sacar turno!</p>
-                    <Link to="/login" className="registro-btn" style={{ textAlign: "center" }}>
+                    <Link to="/register" className="registro-btn" style={{ textAlign: "center" }}>
                         Registrarse
                     </Link>
 

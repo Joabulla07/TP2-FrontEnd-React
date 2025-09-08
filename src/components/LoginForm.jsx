@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 export default function LoginForm(){
     return (
@@ -15,7 +16,7 @@ export default function LoginForm(){
                     <label htmlFor="exampleInputPassword1">Contraseña</label>
                     <input type="password" id="exampleInputPassword1" placeholder="Ingrese su contraseña"/>
                     <a href="#" className="registro">¿Has olvidado tu contraseña?</a>
-                    <a href="#" className="registro">¿Aún no te registraste?</a>
+                    <Link to="/register" className="registro">¿Aún no te registraste?</Link>
                 </div>
                 <button type="submit" className="btn-submit">Iniciar Sesión</button>
                 <p>O inicia sesión con</p>
