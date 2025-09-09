@@ -33,22 +33,25 @@ export default function LoginForm(){
 
             const result = await loginRouter(payload);
 
-            // Mostrar mensaje de éxito y redirigir después de 2 segundos
-            if (result) {
+            if (result && result.token) {
+                // Guardar el token en localStorage
+                localStorage.setItem('token', result.token);
+
                 setTimeout(() => {
-                    navigate('/User', {
-                        data: result
+                    navigate('/home', {
+                        state: { userData: result }
                     });
                 }, 2000);
-            }
-            else {
-                setError('Error de ingreso de sesion. Corrobore los datos ingresados')
+            } else {
+                setError('Error de ingreso de sesión. Corrobore los datos ingresados')
             }
 
         } catch (error) {
             console.log(error);
+            setError('Error de ingreso de sesión. Corrobore los datos ingresados');
         }
     };
+
 
 
     return (
