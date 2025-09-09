@@ -1,20 +1,84 @@
-import React from 'react';
-import {Link} from "react-router-dom";
+import React, {useState} from 'react';
+import {Link, useNavigate} from "react-router-dom";
+import {loginRouter} from "../services/loginRouter.js";
 
 export default function LoginForm(){
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    });
+
+    const [error, setError] = useState('');
+
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+
+        try {
+            const payload = {
+                email: formData.email,
+                password: formData.password
+            }
+
+            const result = await loginRouter(payload);
+
+            // Mostrar mensaje de éxito y redirigir después de 2 segundos
+            if (result) {
+                setTimeout(() => {
+                    navigate('/User', {
+                        data: result
+                    });
+                }, 2000);
+            }
+            else {
+                setError('Error de ingreso de sesion. Corrobore los datos ingresados')
+            }
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+
     return (
         <div className="login-form">
-            <form>
+            {error && <div className="error-message">{error}</div>}
+            <form onSubmit={handleSubmit}>
                 <div>
                     <h2>Inicio de sesión</h2>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Usuario</label>
-                    <input type="email" id="exampleInputEmail1" placeholder="Ingrese su usuario"/>
+                    <label htmlFor="email">Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">Contraseña</label>
-                    <input type="password" id="exampleInputPassword1" placeholder="Ingrese su contraseña"/>
+                    <label htmlFor="password">Contraseña:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
                     <a href="#" className="registro">¿Has olvidado tu contraseña?</a>
                     <Link to="/register" className="registro">¿Aún no te registraste?</Link>
                 </div>
