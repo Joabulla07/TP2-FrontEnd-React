@@ -6,7 +6,7 @@ export default function UserHeader() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem('token');
+        sessionStorage.removeItem('token');
         console.log("login out")
         navigate('/login');
     };

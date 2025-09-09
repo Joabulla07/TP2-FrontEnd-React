@@ -35,7 +35,7 @@ export default function LoginForm(){
 
             if (result && result.token) {
                 // Guardar el token en localStorage
-                localStorage.setItem('token', result.token);
+                sessionStorage.setItem('token', result.token);
 
                 setTimeout(() => {
                     navigate('/home', {
@@ -52,7 +52,7 @@ export default function LoginForm(){
         }
     };
 
-
+// Todo: implementar olvide la contraseña
 
     return (
         <div className="login-form">
