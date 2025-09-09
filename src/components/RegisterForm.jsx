@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "../styles/login.css";
+import {createUserRouter} from "../services/createUserRouter.js";
 
 export default function RegisterForm() {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         email: '',
         nombre: '',
@@ -12,6 +14,7 @@ export default function RegisterForm() {
     });
 
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -37,12 +40,36 @@ export default function RegisterForm() {
         }
 
         try {
-            // Aquí irá tu lógica de registro con la API
-            console.log('Datos del formulario:', formData);
+            const payload = {
+                name: formData.nombre,
+                lastName: formData.apellido,
+                email: formData.email,
+                password: formData.password
+            }
+
+            await createUserRouter(payload);
+            setSuccess(true);
+            
+            // Mostrar mensaje de éxito y redirigir después de 2 segundos
+            setTimeout(() => {
+                navigate('/login');
+            }, 2000);
+            
         } catch (error) {
             setError('Error al registrar el usuario');
+            console.log(error);
         }
     };
+
+    if (success) {
+        return (
+            <div className="login-form-register">
+                <div className="success-message">
+                    ¡Usuario creado exitosamente! Redirigiendo al login...
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="login-form-register">
