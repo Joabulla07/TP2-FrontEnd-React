@@ -82,7 +82,8 @@ export default function LoginForm(){
                         onChange={handleChange}
                         required
                     />
-                    <a href="#" className="registro">¿Has olvidado tu contraseña?</a>
+                    {/*<a href="#" className="registro">¿Has olvidado tu contraseña?</a>*/}
+                    <Link to="/resetPassword" className="registro">¿Has olvidado tu contraseña?</Link>
                     <Link to="/register" className="registro">¿Aún no te registraste?</Link>
                 </div>
                 <button type="submit" className="btn-submit">Iniciar Sesión</button>

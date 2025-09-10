@@ -5,6 +5,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import User from "./pages/User.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import ResetPassword from "./pages/ResetPassword.jsx";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                             </ProtectedRoute>
                         }
                     />
+                    <Route path="/resetPassword" element={<ResetPassword />} />
                 </Routes>
             </div>
         </Router>
